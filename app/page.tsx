@@ -8,6 +8,10 @@ import SearchModal from "./components/SearchModal";
 import CourseCategories from "./components/CourseCategories";
 import Accreditation from "./components/Accreditation";
 import Contact from "./components/Contact";
+import FAQ from "./components/FAQ";
+import Footer from "./components/Footer";
+import FloatingChat from "./components/FloatingChat";
+import FloatingWhatsApp from "./components/FloatingWhatsApp";
 
 export default function Home() {
 
@@ -18,11 +22,8 @@ export default function Home() {
   useEffect(() => {
     const handleScroll = () => {
       if (heroButtonWrapperRef.current) {
-        // getBoundingClientRect() pega a posição exata (em pixels) do elemento na tela atual
         const rect = heroButtonWrapperRef.current.getBoundingClientRect();
 
-        // O nosso cabeçalho fixo tem cerca de 80px de altura.
-        // Se a parte inferior do botão for menor que 80px, significa que ele foi "engolido" pelo cabeçalho / topo da tela.
         if (rect.bottom < 80) {
           setShowFloatingButton(true);
         } else {
@@ -31,13 +32,10 @@ export default function Home() {
       }
     };
 
-    // Adiciona o ouvinte de rolagem da tela
     window.addEventListener("scroll", handleScroll);
 
-    // Executa uma vez assim que a página carrega para garantir o estado inicial correto
     handleScroll();
 
-    // Limpeza padrão do React
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -45,25 +43,20 @@ export default function Home() {
     <main className="min-h-screen bg-[#f8f9fa] pb-20 md:pb-0 relative">
 
       <Header onOpenSearch={() => setIsSearchModalOpen(true)} />
-
-      {/* O Ref sendo passado para o Hero */}
       <Hero ref={heroButtonWrapperRef} onOpenSearch={() => setIsSearchModalOpen(true)} />
-
       <FeaturesGrid />
-
       <CourseCategories />
-
       <Accreditation />
-
       <Contact />
-
+      <FAQ />
+      <Footer /> 
+      <FloatingChat />
+      <FloatingWhatsApp />
       <SearchModal
         isOpen={isSearchModalOpen}
         onClose={() => setIsSearchModalOpen(false)}
       />
 
-      {/* BOTÃO FLUTUANTE MOBILE */}
-      {/* A animação agora acontece mudando a classe diretamente, garantindo que ele suma de verdade */}
       <div
         className={`md:hidden fixed bottom-0 left-0 right-0 flex items-center justify-center px-4 py-3 z-[40] bg-white/90 backdrop-blur-md border-t border-gray-200 transition-all duration-300 ease-in-out ${showFloatingButton ? "translate-y-0 opacity-100 visible" : "translate-y-full opacity-0 invisible"
           }`}

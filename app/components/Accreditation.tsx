@@ -5,7 +5,6 @@ export default function Accreditation() {
     <section id="accreditation" className="flex justify-center items-center px-5 md:px-0 mt-8 md:mt-[50px]">
       <div className="w-full max-w-[1170px] bg-white border border-[#00000012] rounded-[25px] shadow-[0_4px_20px_rgb(0,0,0,0.05)] flex flex-col-reverse md:flex-row items-center overflow-hidden">
         
-        {/* Bloco de Textos */}
         <div className="w-full md:w-1/2 pl-6 pr-6 md:pl-20 md:pr-14 py-8 md:py-10 flex flex-col justify-center">
           
           <div className="w-[210px] h-auto mb-4">
@@ -42,7 +41,6 @@ export default function Accreditation() {
 
         </div>
 
-        {/* Bloco da Imagem */}
         <div className="w-full max-w-full md:w-1/2 p-6 md:pl-2 md:pr-10 md:py-10 max-md:h-auto flex justify-center items-center">
           <img 
             alt="Certificado — Este será o seu Certificado com Nota Máxima no MEC" 
