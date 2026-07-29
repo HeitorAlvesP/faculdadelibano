@@ -10,7 +10,6 @@ export default function FloatingWidgets() {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
 
-  // Validação atualizada: nome > 2 letras e telefone com pelo menos 10 números (com ou sem o 9 extra)
   const isWhatsValid = name.trim().length > 2 && phone.replace(/\D/g, '').length >= 10;
 
   useEffect(() => {
@@ -31,10 +30,9 @@ export default function FloatingWidgets() {
     };
   }, []);
 
-  // Função para aplicar a máscara de telefone (XX) X XXXX-XXXX
   const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    let v = e.target.value.replace(/\D/g, ""); // Remove tudo que não for número
-    v = v.slice(0, 11); // Limita a 11 números
+    let v = e.target.value.replace(/\D/g, ""); 
+    v = v.slice(0, 11); 
 
     let formatted = v;
     if (v.length > 7) {
@@ -80,19 +78,11 @@ export default function FloatingWidgets() {
 
       <div className={isFooterVisible ? 'hidden' : 'block'}>
 
-        {/* ======================================= */}
-        {/*   OVERLAY DESFOCADO (Apenas Mobile)     */}
-        {/* ======================================= */}
         <div 
           className={`fixed inset-0 bg-black/30 backdrop-blur-[3px] z-[999990] transition-opacity duration-300 md:hidden ${activeWidget ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
           onClick={() => setActiveWidget(null)}
         />
 
-        {/* ======================================= */}
-        {/*           WIDGET DO WHATSAPP            */}
-        {/* ======================================= */}
-        
-        {/* Botão Flutuante WhatsApp */}
         <div 
           onClick={() => setActiveWidget(activeWidget === 'whats' ? null : 'whats')}
           className="floatwp fixed z-[60] cursor-pointer w-[60px] h-[60px] bg-[#25d366] rounded-full flex items-center justify-center transition-all duration-300 md:bottom-[8vw] md:right-[5%] max-md:bottom-[100px] max-md:right-[20px]"
@@ -103,7 +93,6 @@ export default function FloatingWidgets() {
           </svg>
         </div>
 
-        {/* Formulário WhatsApp Modal */}
         <form 
           onSubmit={handleWhatsSubmit} 
           id="form_whats_lead" 
@@ -113,8 +102,7 @@ export default function FloatingWidgets() {
           
           <div className="select-none bg-[#F5F1EB] shadow-2xl overflow-hidden rounded-2xl h-[384px] max-md:h-full relative">
             <div className="flex flex-col h-full relative">
-              
-              {/* Header */}
+  
               <div className="flex gap-2 justify-between items-center p-2 bg-[#005C4B]/90 shadow-lg relative z-20">
                 <div className="flex gap-2 items-center">
                   <img alt="Logo" loading="lazy" className="rounded-full w-10 h-10 object-cover" src="https://faculdadelibano.com.br/images/chat/everton.webp" />
@@ -128,7 +116,6 @@ export default function FloatingWidgets() {
                 </div>
               </div>
 
-              {/* Área do Chat com Background */}
               <div className="flex-1 flex flex-col p-2 pt-4 h-full overflow-y-auto overflow-x-hidden w-full pb-[80px] relative z-10" style={{ backgroundImage: "url('https://i.pinimg.com/736x/8c/98/99/8c98994518b575bfd8c949e91d20548b.jpg')", backgroundSize: 'cover', backgroundPosition: 'center' }}>
                 <div className="absolute inset-0 bg-white/70 -z-10"></div>
                 
@@ -162,14 +149,13 @@ export default function FloatingWidgets() {
                         value={phone}
                         onChange={handlePhoneChange}
                         className="rounded-xl outline-none p-[8px] border-[1px] text-[0.938rem] text-[#3c4043] border-[#e7e6eb] focus:border-[#25d366]" 
-                        maxLength={16} // Previne que a máscara quebre caso digitem muito rápido
+                        maxLength={16} 
                       />
                     </div>
                   </div>
                 </div>
               </div>
 
-              {/* Botão Fixo sobre o Background */}
               <div className="absolute bottom-0 left-0 right-0 p-4 z-20 flex flex-col w-full items-center">
                 <button 
                   type="submit"
@@ -185,11 +171,6 @@ export default function FloatingWidgets() {
           </div>
         </form>
 
-        {/* ======================================= */}
-        {/*           WIDGET DO CHAT ROSA           */}
-        {/* ======================================= */}
-        
-        {/* Botão Flutuante Rosa */}
         <div 
           onClick={() => setActiveWidget(activeWidget === 'chat' ? null : 'chat')}
           className="fixed z-[60] cursor-pointer w-[60px] h-[60px] bg-gradient-to-r from-[#ea005f] to-[#ff3f94] shadow-lg rounded-full flex items-center justify-center transition-all duration-300 ease-in-out origin-center hover:scale-110 md:bottom-[calc(8vw+80px)] md:right-[5%] max-md:bottom-[176px] max-md:right-[20px]"

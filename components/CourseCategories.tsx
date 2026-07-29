@@ -15,7 +15,7 @@ const categories = [
 export default function CourseCategories() {
   return (
     <>
-      <section id="courses" className="flex flex-col items-center px-[30px] max-md:px-0 -mt-12">
+      <section id="courses" className="flex flex-col items-center px-[30px] max-md:px-[20px] -mt-12">
         
         <h2 
           className="text-[#0B182F] text-center mb-[30px] pb-[30px] text-[2.75rem] font-bold leading-[57.2px] max-md:text-[35px] max-md:leading-[42px]" 
@@ -27,7 +27,7 @@ export default function CourseCategories() {
         <div className="w-full max-w-[1170px] grid grid-cols-3 justify-center items-center max-md:grid-cols-1">
           
           {categories.map((cat) => (
-            <div key={cat.id} className="w-[95%] max-md:ml-0 ml-[2.5%] pb-[30px] flex max-[1199px]:flex-col justify-center select-none max-md:w-auto">
+            <div key={cat.id} className="w-[95%] max-md:w-full max-md:ml-0 ml-[2.5%] pb-[30px] flex max-[1199px]:flex-col justify-center select-none">
               
               <div className="w-full">
                 <div className="group cursor-pointer w-full min-[1200px]:h-[515px] bg-white drop-shadow transition-all duration-300 max-md:w-full max-md:h-auto hover:drop-shadow-lg hover:-translate-y-1 will-change-transform rounded-t-[25px] overflow-hidden">

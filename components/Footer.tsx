@@ -58,7 +58,8 @@ export default function Footer() {
 
   return (
     <section id="main-footer" className="flex justify-center bg-[#0b182f] w-full">
-      <div className="grid grid-cols-1 gap-[48px] w-full max-w-[1280px] py-24 max-md:px-[5vw] max-md:py-12 xl:px-0 lg:px-8 px-5">
+      {/* Adicionamos o id="contato" nesta div principal para servir de âncora para o menu */}
+      <div id="contato" className="grid grid-cols-1 gap-[48px] w-full max-w-[1280px] py-24 max-md:px-[5vw] max-md:py-12 xl:px-0 lg:px-8 px-5">
 
         <div className="grid gap-[60px] max-md:grid-cols-1 max-md:gap-[40px] md:grid-cols-[200px_1fr]">
 

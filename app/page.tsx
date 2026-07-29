@@ -1,34 +1,44 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import Header from "./components/Header";
-import Hero from "./components/Hero";
-import FeaturesGrid from "./components/FeaturesGrid";
-import SearchModal from "./components/SearchModal";
-import CourseCategories from "./components/CourseCategories";
-import Accreditation from "./components/Accreditation";
-import Contact from "./components/Contact";
-import FAQ from "./components/FAQ";
-import Footer from "./components/Footer";
+import Header from "../components/Header";
+import Hero from "../components/Hero";
+import FeaturesGrid from "../components/FeaturesGrid";
+import SearchModal from "../components/SearchModal";
+import CourseCategories from "../components/CourseCategories";
+import Accreditation from "../components/Accreditation";
+import Contact from "../components/Contact";
+import FAQ from "../components/FAQ";
+import Footer from "../components/Footer";
 
-import FloatingWidgets from "./components/FloatingWidgets";
+import FloatingWidgets from "../components/FloatingWidgets";
 
 export default function Home() {
 
   const [isSearchModalOpen, setIsSearchModalOpen] = useState(false);
   const [showFloatingButton, setShowFloatingButton] = useState(false);
+  
   const heroButtonWrapperRef = useRef<HTMLDivElement>(null);
+  const faqAndFooterRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
       if (heroButtonWrapperRef.current) {
-        const rect = heroButtonWrapperRef.current.getBoundingClientRect();
+        const heroRect = heroButtonWrapperRef.current.getBoundingClientRect();
+        let isVisible = false;
 
-        if (rect.bottom < 80) {
-          setShowFloatingButton(true);
-        } else {
-          setShowFloatingButton(false);
+        if (heroRect.bottom < 80) {
+          isVisible = true;
         }
+
+        if (faqAndFooterRef.current) {
+          const faqRect = faqAndFooterRef.current.getBoundingClientRect();
+          if (faqRect.top < window.innerHeight) {
+            isVisible = false;
+          }
+        }
+
+        setShowFloatingButton(isVisible);
       }
     };
 
@@ -40,7 +50,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="min-h-screen bg-[#f8f9fa] pb-20 md:pb-0 relative">
+    <main className="min-h-screen bg-[#f8f9fa] relative">
 
       <Header onOpenSearch={() => setIsSearchModalOpen(true)} />
       <Hero ref={heroButtonWrapperRef} onOpenSearch={() => setIsSearchModalOpen(true)} />
@@ -48,8 +58,11 @@ export default function Home() {
       <CourseCategories />
       <Accreditation />
       <Contact />
-      <FAQ />
-      <Footer /> 
+      
+      <div ref={faqAndFooterRef}>
+        <FAQ />
+        <Footer /> 
+      </div>
 
       <FloatingWidgets/>
 
