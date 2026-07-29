@@ -1,0 +1,5 @@
+rgb(11 24 47 / var(--tw-bg-opacity));  --> azul escuto
+
+rgb(234 0 95 / var(--tw-bg-opacity));  --> rosa
+
+rgb(230 231 232 / var(--tw-bg-opacity)) --> Cinza escuro
