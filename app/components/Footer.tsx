@@ -2,20 +2,19 @@
 
 import { useState } from "react";
 
-// Componente auxiliar para os blocos de links (Acordeão no Mobile)
-const FooterAccordion = ({ 
-  title, 
-  children, 
-  id, 
-  openId, 
-  onToggle, 
+const FooterAccordion = ({
+  title,
+  children,
+  id,
+  openId,
+  onToggle,
   noBorder = false,
   hideOnMobile = false
-}: { 
-  title: string; 
-  children: React.ReactNode; 
-  id: string; 
-  openId: string | null; 
+}: {
+  title: string;
+  children: React.ReactNode;
+  id: string;
+  openId: string | null;
   onToggle: (id: string) => void;
   noBorder?: boolean;
   hideOnMobile?: boolean;
@@ -24,8 +23,8 @@ const FooterAccordion = ({
 
   return (
     <div className={`grid gap-[16px] content-start ${hideOnMobile ? 'max-md:hidden' : ''} ${noBorder ? '' : 'max-md:border-t max-md:border-white/10 max-md:pt-[24px]'}`}>
-      <button 
-        type="button" 
+      <button
+        type="button"
         onClick={() => onToggle(id)}
         className="grid gap-[2px] text-left max-md:flex max-md:justify-between max-md:items-center max-md:gap-[12px] max-md:w-full max-md:cursor-pointer md:cursor-default"
       >
@@ -33,9 +32,9 @@ const FooterAccordion = ({
           <span className="text-white opacity-50 text-[13px] font-bold leading-[19.5px] uppercase">{title}</span>
           <div className="w-[46px] h-[2px] bg-[#ea005f]"></div>
         </div>
-        <svg 
-          stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 24 24" 
-          className={`text-[#8A95A5] w-[20px] h-[20px] shrink-0 transition-transform duration-300 md:hidden ${isOpen ? 'rotate-180' : ''}`} 
+        <svg
+          stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 24 24"
+          className={`text-[#8A95A5] w-[20px] h-[20px] shrink-0 transition-transform duration-300 md:hidden ${isOpen ? 'rotate-180' : ''}`}
           height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"
         >
           <path d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"></path>
@@ -60,20 +59,18 @@ export default function Footer() {
   return (
     <section id="main-footer" className="flex justify-center bg-[#0b182f] w-full">
       <div className="grid grid-cols-1 gap-[48px] w-full max-w-[1280px] py-24 max-md:px-[5vw] max-md:py-12 xl:px-0 lg:px-8 px-5">
-        
-        {/* Topo do Rodapé: Logo, Frase, Redes Sociais e Menus */}
+
         <div className="grid gap-[60px] max-md:grid-cols-1 max-md:gap-[40px] md:grid-cols-[200px_1fr]">
-          
-          {/* Logo e Redes Sociais */}
+
           <div className="flex flex-col gap-[24px] content-start">
-            <img 
-              alt="Logo Faculdade Líbano" 
-              loading="lazy" 
-              className="w-full h-auto max-w-[160px]" 
-              src="https://faculdadelibano.com.br/images/footer/logo-libano-branca.svg" 
+            <img
+              alt="Logo Faculdade Líbano"
+              loading="lazy"
+              className="w-full h-auto max-w-[160px]"
+              src="https://faculdadelibano.com.br/images/footer/logo-libano-branca.svg"
             />
             <p className="text-white md:opacity-50 text-[16px] font-normal leading-[24px] md:max-w-[400px] max-md:italic">
-              “Porventura não se converterá o Líbano, num breve momento, em campo fértil? E o campo fértil não se reputará por um bosque?”<br/>- Isaías 29:17
+              “Porventura não se converterá o Líbano, num breve momento, em campo fértil? E o campo fértil não se reputará por um bosque?”<br />- Isaías 29:17
             </p>
             <div className="grid grid-cols-[repeat(4,24px)] gap-[20px] items-center">
               <a target="_blank" rel="noopener noreferrer" className="transition-all duration-[350ms] hover:opacity-70" aria-label="Facebook" href="https://www.facebook.com/faculdadelibano">
@@ -91,10 +88,8 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Menus do Rodapé */}
           <div className="grid grid-cols-1 gap-[32px] md:grid-cols-4 md:gap-6">
-            
-            {/* Coluna 1 */}
+
             <div className="grid gap-[24px] content-start">
               <FooterAccordion title="PÓS-GRADUAÇÃO" id="pos" openId={openMenu} onToggle={toggleMenu} noBorder>
                 <a className="block text-[#7a7a7a] text-[15px] font-normal leading-[32px] hover:text-[#ea005f] transition-colors" >Pós em Educação</a>
@@ -109,7 +104,6 @@ export default function Footer() {
               </FooterAccordion>
             </div>
 
-            {/* Coluna 2 */}
             <div className="grid gap-[24px] content-start md:border-l md:border-white/10 md:pl-[32px]">
               <FooterAccordion title="GRADUAÇÃO" id="grad" openId={openMenu} onToggle={toggleMenu}>
                 <a className="block text-[#7a7a7a] text-[15px] font-normal leading-[32px] hover:text-[#ea005f] transition-colors" href="https://graduacao.faculdadelibano.edu.br/graduacao/gestao-comercial">Gestão Comercial</a>
@@ -124,13 +118,12 @@ export default function Footer() {
               </FooterAccordion>
             </div>
 
-            {/* Coluna 3 */}
             <div className="grid gap-[24px] content-start md:border-l md:border-white/10 md:pl-[32px]">
               <FooterAccordion title="ÁREA DO ALUNO" id="aluno" openId={openMenu} onToggle={toggleMenu}>
                 <a className="block text-[#7a7a7a] text-[15px] font-normal leading-[32px] hover:text-[#ea005f] transition-colors" href="https://cutt.ly/3eSGz7YC">Portal do Aluno</a>
                 <a className="block text-[#7a7a7a] text-[15px] font-normal leading-[32px] hover:text-[#ea005f] transition-colors" href="https://portal.faculdadelibano.edu.br/checker">Validador de Certificado</a>
               </FooterAccordion>
-              
+
               <FooterAccordion title="BAIXAR APLICATIVO" id="app" openId={openMenu} onToggle={toggleMenu} hideOnMobile>
                 <div className="grid grid-cols-2 gap-2 mt-2">
                   <a target="_blank" rel="noopener noreferrer" className="transition-opacity duration-300 hover:opacity-90" href="https://apps.apple.com/br/app/faculdade-l%C3%ADbano/id6776030388">
@@ -148,7 +141,6 @@ export default function Footer() {
               </FooterAccordion>
             </div>
 
-            {/* Coluna 4 */}
             <div className="grid gap-[24px] content-start md:border-l md:border-white/10 md:pl-[32px]">
               <FooterAccordion title="A LÍBANO" id="libano" openId={openMenu} onToggle={toggleMenu}>
                 <a className="block text-[#7a7a7a] text-[15px] font-normal leading-[32px] hover:text-[#ea005f] transition-colors" href="http://graduacao.faculdadelibano.edu.br/quem-somos">Sobre a Líbano</a>
@@ -166,7 +158,6 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Aplicativo Mobile (Aparece fora do acordeão em telas menores) */}
         <div className="grid gap-[16px] content-start md:hidden">
           <span className="text-white opacity-50 text-[13px] font-bold leading-[19.5px] uppercase">BAIXAR APLICATIVO</span>
           <div className="grid grid-cols-2 gap-2">
@@ -179,11 +170,9 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Caixa de Selos e e-MEC */}
         <div className="flex flex-col max-md:gap-[48px]">
           <div className="grid grid-cols-1 md:grid-cols-8 gap-[32px] items-center bg-[#17243a] rounded-[16px] p-[24px] w-full md:w-fit">
-            
-            {/* QR Code Desktop */}
+
             <div className="col-span-2 flex gap-3 max-md:hidden">
               <img alt="QR Code e-MEC" loading="lazy" className="rounded-[8px] w-24 aspect-square" src="https://faculdadelibano.com.br/images/footer/e-mec-qr.webp" />
               <div className="flex flex-col gap-1 justify-between max-md:justify-center">
@@ -192,7 +181,6 @@ export default function Footer() {
               </div>
             </div>
 
-            {/* Selos de Confiança */}
             <div className="col-span-1 md:col-span-6 grid grid-cols-1 md:grid-cols-[auto_1fr] gap-[32px] items-center">
               <div className="flex flex-col gap-1 max-md:items-center">
                 <span className="text-white text-[16px] font-medium leading-[1.2] whitespace-nowrap">Selos de confiança</span>
@@ -217,8 +205,7 @@ export default function Footer() {
               </div>
             </div>
           </div>
-          
-          {/* QR Code Mobile */}
+
           <div className="flex gap-6 md:hidden justify-center items-center">
             <img alt="QR Code e-MEC" loading="lazy" className="rounded-[8px] w-24 aspect-square" src="https://faculdadelibano.com.br/images/footer/e-mec-qr.webp" />
             <div className="flex flex-col gap-3 justify-center items-end">
@@ -227,7 +214,6 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Rodapé Legal - Mobile (Removido o mt-8) */}
           <div className="grid gap-[12px] md:hidden text-center">
             <div className="flex justify-center gap-[24px]">
               <a className="text-[#7a7a7a] text-[14px] font-normal hover:text-[#ea005f] transition-colors" href="/politica-de-privacidade">Política de Privacidade</a>
@@ -238,7 +224,6 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Rodapé Legal - Desktop (Removido o mt-8) */}
         <div className="grid gap-3 max-md:hidden">
           <div className="flex gap-[24px] items-center w-fit">
             <a className="text-[#7a7a7a] text-[14px] font-normal hover:text-[#ea005f] transition-colors" href="/politica-de-privacidade">Política de Privacidade</a>

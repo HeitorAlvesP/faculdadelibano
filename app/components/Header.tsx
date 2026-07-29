@@ -11,7 +11,6 @@ export default function Header() {
 
   return (
     <>
-      {/* 1. Top Bar */}
       <div className="flex top-0 flex-row bg-[#0B182F] py-[10px] text-[1rem] leading-[27.2px] text-center justify-center max-md:px-[5px]">
         <div className="flex items-center max-md:gap-x-3">
           <div>
@@ -28,7 +27,6 @@ export default function Header() {
         </div>
       </div>
 
-      {/* 2. Main Header */}
       <header className="sticky top-0 z-50 w-full bg-white">
         <div id="mainHeader" className="max-md:hidden w-full pointer-events-auto px-[48px] py-[6px] max-[1290px]:px-1">
           <div className="w-full flex px-3 max-md:px-0 py-1">
@@ -74,7 +72,6 @@ export default function Header() {
           </div>
         </div>
 
-        {/* Menu Mobile */}
         <div className="md:hidden flex flex-col bg-[#f6f6f6] w-full relative z-20">
           <div className="flex items-center justify-between px-5 py-[15px]">
             <Link href="/" className="flex items-center my-2">

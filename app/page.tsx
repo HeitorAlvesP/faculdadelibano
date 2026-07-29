@@ -10,8 +10,8 @@ import Accreditation from "./components/Accreditation";
 import Contact from "./components/Contact";
 import FAQ from "./components/FAQ";
 import Footer from "./components/Footer";
-import FloatingChat from "./components/FloatingChat";
-import FloatingWhatsApp from "./components/FloatingWhatsApp";
+
+import FloatingWidgets from "./components/FloatingWidgets";
 
 export default function Home() {
 
@@ -50,8 +50,9 @@ export default function Home() {
       <Contact />
       <FAQ />
       <Footer /> 
-      <FloatingChat />
-      <FloatingWhatsApp />
+
+      <FloatingWidgets/>
+
       <SearchModal
         isOpen={isSearchModalOpen}
         onClose={() => setIsSearchModalOpen(false)}
