@@ -10,7 +10,7 @@ export default function FeaturesGrid() {
             <div className="w-full h-full flex justify-center items-center">
               <img 
                 alt="Formatura presencial" 
-                className="pointer-events-none select-none rounded-2xl object-cover h-auto w-full md:aspect-[1.31]" 
+                className="pointer-events-none select-none rounded-2xl object-cover h-auto w-full scale-105 md:aspect-[1.31]" 
                 src="https://faculdadelibano.com.br/_next/image?url=%2FCF_CERTIFIER%2Ffaculdadelibano%2Fimages%2Ffirst-section%2Foutubro-23%2Foutubro23-1-1-5.webp&w=1080&q=75" 
               />
             </div>
@@ -20,8 +20,8 @@ export default function FeaturesGrid() {
             <div className="flex flex-col md:flex-row md:items-center">
               <img 
                 alt="Alunos por todo o Brasil!" 
-                className="w-full md:w-[30%] max-w-[180px] h-auto pointer-events-none select-none" 
-                src="https://faculdadelibano.com.br/_next/image?url=%2FCF_CERTIFIER%2Ffaculdadelibano%2Fimages%2Ffirst-section%2Foutubro-23%2Foutubro23-1-2.webp&w=384&q=75" 
+                className="w-full md:w-[45%] max-w-[260px] h-auto pointer-events-none select-none" 
+                src="https://faculdadelibano.com.br/_next/image?url=%2FCF_CERTIFIER%2Ffaculdadelibano%2Fimages%2Ffirst-section%2Foutubro-23%2Foutubro23-1-2.webp&w=1080&q=75" 
               />
               <p className="md:ml-5 leading-4 tracking-[0.15px] text-[#3C4043] font-normal text-[0.9375rem] pt-5 md:pt-1">
                 Mais de 225.000 <br className="hidden md:block" /> alunos pelo Brasil.
@@ -132,8 +132,8 @@ export default function FeaturesGrid() {
               <div className="md:col-span-1 w-full h-full mb-5 md:mb-0 flex justify-center items-center">
                 <img 
                   alt="Somente 6 meses!" 
-                  className="w-[200px] md:w-[80%] h-auto object-contain" 
-                  src="https://faculdadelibano.com.br/_next/image?url=%2FCF_CERTIFIER%2Ffaculdadelibano%2Fimages%2Ffirst-section%2Foutubro-23%2Foutubro23-2-1-1.webp&w=384&q=75" 
+                  className="w-[280px] md:w-full h-auto object-contain" 
+                  src="https://faculdadelibano.com.br/_next/image?url=%2FCF_CERTIFIER%2Ffaculdadelibano%2Fimages%2Ffirst-section%2Foutubro-23%2Foutubro23-2-1-1.webp&w=1080&q=75" 
                 />
               </div>
             </div>
@@ -145,15 +145,15 @@ export default function FeaturesGrid() {
                 </p>
                 <img 
                   alt="Sua plataforma de estudos" 
-                  className="pointer-events-none select-none w-full md:w-auto md:h-auto mb-5 md:mb-0 mx-auto md:mx-0" 
-                  src="https://faculdadelibano.com.br/_next/image?url=%2FCF_CERTIFIER%2Ffaculdadelibano%2Fimages%2Ffirst-section%2Foutubro-23%2Foutubro23-3-2.webp&w=256&q=75" 
+                  className="pointer-events-none select-none w-full scale-105 md:scale-100 md:w-[90%] md:h-auto mb-5 md:mb-0 mx-auto md:mx-0" 
+                  src="https://faculdadelibano.com.br/_next/image?url=%2FCF_CERTIFIER%2Ffaculdadelibano%2Fimages%2Ffirst-section%2Foutubro-23%2Foutubro23-3-2.webp&w=1080&q=75" 
                 />
               </div>
               <div className="md:col-span-1 w-full h-full flex justify-center items-center">
                 <img 
                   alt="Plataforma totalmente EaD!" 
-                  className="pointer-events-none select-none w-full h-auto" 
-                  src="https://faculdadelibano.com.br/_next/image?url=%2FCF_CERTIFIER%2Ffaculdadelibano%2Fimages%2Ffirst-section%2Foutubro-23%2Foutubro23-3-1-3.webp&w=384&q=75" 
+                  className="pointer-events-none select-none w-full h-auto scale-110" 
+                  src="https://faculdadelibano.com.br/_next/image?url=%2FCF_CERTIFIER%2Ffaculdadelibano%2Fimages%2Ffirst-section%2Foutubro-23%2Foutubro23-3-1-3.webp&w=1080&q=75" 
                 />
               </div>
             </div>

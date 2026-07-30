@@ -1,18 +1,24 @@
 "use client";
 
+import Link from "next/link";
+
+interface CourseCategoriesProps {
+  onSelectCategory?: (categoryTitle: string) => void;
+}
+
 const categories = [
-  { id: 'educacao', title: 'Educação', count: 280, desc: 'Comece a enxergar a educação de um jeito inovador!', img: 'https://faculdadelibano.com.br/images/ChooseSection/educacao.webp' },
-  { id: 'saude', title: 'Saúde', count: 229, desc: 'Especializações para atuar em clínicas e hospitais.', img: 'https://faculdadelibano.com.br/images/ChooseSection/saude.webp' },
-  { id: 'engenharia', title: 'Engenharia', count: 42, desc: 'Destaque o seu currículo, gerencie produções e assine laudos em construções.', img: 'https://faculdadelibano.com.br/images/ChooseSection/engenharia.webp' },
-  { id: 'direito', title: 'Direito', count: 85, desc: 'Chegue preparado em tribunais e conquiste pontos extras em concursos.', img: 'https://faculdadelibano.com.br/images/ChooseSection/direito.webp' },
-  { id: 'psicologia', title: 'Psicologia', count: 39, desc: 'Esteja pronto para consultórios, instituições e clínicas. Amplie o mundo da Psicologia.', img: 'https://faculdadelibano.com.br/images/ChooseSection/psicologia.webp' },
-  { id: 'empresarial', title: 'Empresarial', count: 341, desc: 'O próximo gestor da sua empresa, tem que ser você!', img: 'https://faculdadelibano.com.br/images/ChooseSection/empresarial.webp' },
-  { id: 'mba-executivo', title: 'MBA Executivo', count: 187, desc: 'Masterize as habilidades de um executivo.', img: 'https://faculdadelibano.com.br/images/ChooseSection/mba-executivo.webp' },
-  { id: 'meio-ambiente', title: 'Meio Ambiente', count: 47, desc: 'Vá além de plantar uma árvore. Seja responsável pelo meio ambiente.', img: 'https://faculdadelibano.com.br/images/ChooseSection/meio-ambiente.webp' },
-  { id: 'servico-social', title: 'Serviço Social', count: 21, desc: 'Assegure que as experiências nos serviços sociais sejam satisfatórias.', img: 'https://faculdadelibano.com.br/images/ChooseSection/servico-social.webp' }
+  { id: 'educacao', title: 'Educação', count: 280, desc: 'Comece a enxergar a educação de um jeito inovador!', img: 'https://faculdadelibano.com.br/images/ChooseSection/educacao.webp', link: 'https://faculdadelibano.com.br/pos-graduacao/educacao' },
+  { id: 'saude', title: 'Saúde', count: 229, desc: 'Especializações para atuar em clínicas e hospitais.', img: 'https://faculdadelibano.com.br/images/ChooseSection/saude.webp', link: 'https://faculdadelibano.com.br/pos-graduacao/saude' },
+  { id: 'engenharia', title: 'Engenharia', count: 42, desc: 'Destaque o seu currículo, gerencie produções e assine laudos em construções.', img: 'https://faculdadelibano.com.br/images/ChooseSection/engenharia.webp', link: 'https://faculdadelibano.com.br/pos-graduacao/engenharia' },
+  { id: 'direito', title: 'Direito', count: 85, desc: 'Chegue preparado em tribunais e conquiste pontos extras em concursos.', img: 'https://faculdadelibano.com.br/images/ChooseSection/direito.webp', link: 'https://faculdadelibano.com.br/pos-graduacao/direito' },
+  { id: 'psicologia', title: 'Psicologia', count: 39, desc: 'Esteja pronto para consultórios, instituições e clínicas. Amplie o mundo da Psicologia.', img: 'https://faculdadelibano.com.br/images/ChooseSection/psicologia.webp', link: 'https://faculdadelibano.com.br/pos-graduacao/psicologia' },
+  { id: 'empresarial', title: 'Empresarial', count: 341, desc: 'O próximo gestor da sua empresa, tem que ser você!', img: 'https://faculdadelibano.com.br/images/ChooseSection/empresarial.webp', link: 'https://faculdadelibano.com.br/pos-graduacao/empresarial' },
+  { id: 'mba-executivo', title: 'MBA Executivo', count: 187, desc: 'Masterize as habilidades de um executivo.', img: 'https://faculdadelibano.com.br/images/ChooseSection/mba-executivo.webp', link: 'https://faculdadelibano.com.br/pos-graduacao/mba-executivo' },
+  { id: 'meio-ambiente', title: 'Meio Ambiente', count: 47, desc: 'Vá além de plantar uma árvore. Seja responsável pelo meio ambiente.', img: 'https://faculdadelibano.com.br/images/ChooseSection/meio-ambiente.webp', link: 'https://faculdadelibano.com.br/pos-graduacao/meio-ambiente' },
+  { id: 'servico-social', title: 'Serviço Social', count: 21, desc: 'Assegure que as experiências nos serviços sociais sejam satisfatórias.', img: 'https://faculdadelibano.com.br/images/ChooseSection/servico-social.webp', link: 'https://faculdadelibano.com.br/pos-graduacao/servico-social' }
 ];
 
-export default function CourseCategories() {
+export default function CourseCategories({ onSelectCategory }: CourseCategoriesProps) {
   return (
     <>
       <section id="courses" className="flex flex-col items-center px-[30px] max-md:px-[20px] -mt-12">
@@ -30,7 +36,11 @@ export default function CourseCategories() {
             <div key={cat.id} className="w-[95%] max-md:w-full max-md:ml-0 ml-[2.5%] pb-[30px] flex max-[1199px]:flex-col justify-center select-none">
               
               <div className="w-full">
-                <div className="group cursor-pointer w-full min-[1200px]:h-[515px] bg-white drop-shadow transition-all duration-300 max-md:w-full max-md:h-auto hover:drop-shadow-lg hover:-translate-y-1 will-change-transform rounded-t-[25px] overflow-hidden">
+                <Link 
+                  href={cat.link}
+                  aria-label={`Saiba mais sobre a categoria ${cat.title}`}
+                  className="group cursor-pointer block w-full min-[1200px]:h-[515px] bg-white drop-shadow transition-all duration-300 max-md:w-full max-md:h-auto hover:drop-shadow-lg hover:-translate-y-1 will-change-transform rounded-t-[25px] overflow-hidden"
+                >
                   
                   <div className="overflow-hidden w-full bg-cover aspect-[4/3] relative rounded-t-[25px]">
                     <img 
@@ -59,7 +69,7 @@ export default function CourseCategories() {
                     </svg>
                   </span>
 
-                </div>
+                </Link>
               </div>
               
               <div className="min-[1200px]:hidden h-full w-full"></div>

@@ -72,7 +72,7 @@ export default function Home() {
       />
 
       <div
-        className={`md:hidden fixed bottom-0 left-0 right-0 flex items-center justify-center px-4 py-3 z-[40] bg-white/90 backdrop-blur-md border-t border-gray-200 transition-all duration-300 ease-in-out ${showFloatingButton ? "translate-y-0 opacity-100 visible" : "translate-y-full opacity-0 invisible"
+        className={`md:hidden fixed bottom-0 left-0 right-0 flex items-center justify-center px-4 py-3 z-[40] bg-white/30 backdrop-blur-lg border-t border-gray-200 transition-all duration-300 ease-in-out ${showFloatingButton ? "translate-y-0 opacity-100 visible" : "translate-y-full opacity-0 invisible"
           }`}
       >
         <button
@@ -83,7 +83,7 @@ export default function Home() {
           <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
             <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
           </svg>
-          <span>ESCOLHA SUA PÓS-GRADUAÇÃO</span>
+          <span><strong>ESCOLHA SUA PÓS-GRADUAÇÃO</strong></span>
         </button>
       </div>
     </main>

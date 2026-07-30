@@ -7,7 +7,7 @@ const contactCards = [
     status: 'Estamos Online',
     desc: 'Inicie uma conversa com nossos consultores educacionais.',
     img: 'https://faculdadelibano.com.br/images/Contact/envie-um-whatsapp.webp',
-    link: '/whatsapp',
+    link: 'https://faculdadelibano.com.br/whatsapp',
     actionText: 'ENVIAR MENSAGEM',
     external: false
   },
@@ -35,6 +35,18 @@ const contactCards = [
 ];
 
 export default function Contact() {
+  
+  const handleCardClick = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
+    if (id === 'chat') {
+      e.preventDefault(); 
+      
+      const whatsBtn = document.querySelector('.floatwp') as HTMLElement;
+      if (whatsBtn) {
+        whatsBtn.click();
+      }
+    }
+  };
+
   return (
     <section id="contact" className="flex flex-col items-center px-5 md:px-[30px] my-16">
       
@@ -55,6 +67,7 @@ export default function Contact() {
               target={card.external ? "_blank" : "_self"} 
               rel={card.external ? "noopener noreferrer" : ""} 
               className="cursor-pointer"
+              onClick={(e) => handleCardClick(e, card.id)} 
             >
               <div className="group w-full min-[1200px]:h-[488px] bg-white drop-shadow duration-300 max-md:w-full max-md:h-auto hover:drop-shadow-lg hover:-translate-y-1">
                 

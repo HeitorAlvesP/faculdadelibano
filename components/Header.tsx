@@ -20,12 +20,10 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [isMobileMenuOpen]);
 
-  // Função para lidar com o clique nas âncoras e rolar suavemente
   const handleAnchorClick = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
-    e.preventDefault(); // Impede o comportamento padrão de atualizar a URL de forma brusca
-    setIsMobileMenuOpen(false); // Fecha o menu
+    e.preventDefault(); 
+    setIsMobileMenuOpen(false); 
     
-    // Procura o elemento na tela e rola até ele de forma suave
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
@@ -34,7 +32,8 @@ export default function Header() {
 
   return (
     <>
-      <div className="flex flex-row bg-[#0B182F] py-[10px] text-[1rem] leading-[27.2px] text-center justify-center max-md:px-[5px]">
+      {/* Faixa Superior Promocional (Agora rola junto com a página) */}
+      <div className="flex flex-row bg-[#0B182F] py-[10px] text-[1rem] leading-[27.2px] text-center justify-center max-md:px-[5px] w-full">
         <div className="flex items-center max-md:gap-x-3">
           <div>
             <span className="max-[374px]:flex max-[374px]:items-center bg-[#ea005f] px-[10px] py-[5px] rounded-[3px] mr-[7px] text-white text-[0.6875rem] font-bold">
@@ -50,9 +49,10 @@ export default function Header() {
         </div>
       </div>
 
-      <header className="relative z-50 w-full bg-white">
+      {/* Cabeçalho Principal (Fixo apenas no computador) */}
+      <header className="md:sticky md:top-0 relative z-50 w-full bg-white shadow-sm md:shadow-md">
         <div id="mainHeader" className="max-md:hidden w-full pointer-events-auto px-[48px] py-[6px] max-[1290px]:px-1">
-          <div className="w-full flex px-3 max-md:px-0 py-1">
+          <div className="w-full flex px-3 max-md:px-0 py-1 items-center justify-between">
             <div className="hidden md:flex items-center space-x-2 w-1/3">
               <Link href="/">
                 <div className="min-w-[140px]">
@@ -117,12 +117,11 @@ export default function Header() {
 
           <div className={`bg-[#f6f6f6] shadow-lg absolute top-full left-0 right-0 overflow-hidden transition-all duration-300 ${isMobileMenuOpen ? 'max-h-[300px]' : 'max-h-0'}`}>
             <ul className="text-[#0B1933] font-medium py-2 px-4">
-              {/* Links de navegação interna alterados para <a> com scrollIntoView */}
               <li className="py-4 px-4 border-b border-gray-200/50">
                 <a href="#courses" onClick={(e) => handleAnchorClick(e, 'courses')} className="block w-full text-left">Nossas Pós e MBA's</a>
               </li>
               <li className="py-4 px-4 border-b border-gray-200/50">
-                <a href="#contato" onClick={(e) => handleAnchorClick(e, 'contato')} className="block w-full text-left">Contato</a>
+                <a href="#contact" onClick={(e) => handleAnchorClick(e, 'contact')} className="block w-full text-left">Contato</a>
               </li>
               <li className="py-4 px-4 border-b border-gray-200/50">
                 <Link href="https://portal.faculdadelibano.edu.br/login" onClick={() => setIsMobileMenuOpen(false)} className="block w-full text-left">Já sou aluno</Link>

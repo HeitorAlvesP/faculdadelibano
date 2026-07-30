@@ -9,9 +9,9 @@ interface HeroProps {
 const Hero = forwardRef<HTMLDivElement, HeroProps>(({ onOpenSearch }, ref) => {
   return (
     <section className="flex justify-center w-full bg-[#f8f9fa]">
-      <div className="flex flex-col max-w-[1170px] w-full max-md:px-[5vw] justify-center items-center h-auto text-center pt-10">
-        
-        <div className="w-full flex justify-center md:hidden mb-4">
+      <div className="flex flex-col max-w-[1170px] w-full max-md:px-[5vw] justify-center items-center h-auto text-center pt-10 max-md:pt-4">
+
+        <div className="w-full flex justify-center md:hidden mb-0">
           <img 
             alt="Nota máxima no MEC!" 
             loading="lazy" 
@@ -20,7 +20,7 @@ const Hero = forwardRef<HTMLDivElement, HeroProps>(({ onOpenSearch }, ref) => {
           />
         </div>
 
-        <div className="flex flex-col relative mt-2 mb-8 items-center w-full">
+        <div className="flex flex-col relative mt-2 max-md:mt-0 mb-8 items-center w-full">
           <span role="heading" aria-level={1} className="my-[0.5rem] uppercase text-[0.875rem] font-medium tracking-[2.1px] leading-[1.006rem] text-[#ea005f]">
             MATRÍCULAS ABERTAS!
           </span>

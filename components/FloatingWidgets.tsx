@@ -116,7 +116,7 @@ export default function FloatingWidgets() {
                 </div>
               </div>
 
-              <div className="flex-1 flex flex-col p-2 pt-4 h-full overflow-y-auto overflow-x-hidden w-full pb-[80px] relative z-10" style={{ backgroundImage: "url('https://i.pinimg.com/736x/8c/98/99/8c98994518b575bfd8c949e91d20548b.jpg')", backgroundSize: 'cover', backgroundPosition: 'center' }}>
+              <div className="flex-1 flex flex-col p-2 pt-4 h-full overflow-hidden w-full pb-[80px] relative z-10" style={{ backgroundImage: "url('https://i.pinimg.com/736x/8c/98/99/8c98994518b575bfd8c949e91d20548b.jpg')", backgroundSize: 'cover', backgroundPosition: 'center' }}>
                 <div className="absolute inset-0 bg-white/70 -z-10"></div>
                 
                 <div className="flex mb-4">
@@ -180,7 +180,6 @@ export default function FloatingWidgets() {
           </svg>
         </div>
 
-        {/* Formulário Chat Rosa Modal */}
         <form 
           id="form_chat_lead" 
           className={`transition-all duration-300 ease-in-out fixed z-[999999] md:bottom-[8vw] md:right-[calc(5%+76px)] w-[336px] h-[500px] flex flex-col md:origin-bottom-right max-md:inset-0 max-md:m-auto max-md:w-[calc(100vw-40px)] max-md:h-[calc(100dvh-40px)] max-md:max-h-[600px] max-md:origin-center ${activeWidget === 'chat' ? 'opacity-100 scale-100 pointer-events-auto' : 'opacity-0 scale-50 pointer-events-none'}`}
@@ -213,7 +212,7 @@ export default function FloatingWidgets() {
               </div>
             </div>
             
-            <div className="h-full flex flex-col pr-[1px] max-md:p-5 pt-12 overflow-y-auto relative md:border-b border-[#eee]" style={{ paddingBottom: '1rem' }}>
+            <div className="h-full flex flex-col pr-[1px] max-md:p-5 pt-12 overflow-hidden relative md:border-b border-[#eee]" style={{ paddingBottom: '1rem' }}>
               <div className="w-full flex justify-start">
                 <div className="flex pl-4 max-md:pl-0 items-end gap-2 pb-0.5">
                   <div className="w-8 h-8"></div>
@@ -259,7 +258,6 @@ export default function FloatingWidgets() {
             </div>
           </div>
         </form>
-
 
       </div>
     </>
