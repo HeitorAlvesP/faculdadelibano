@@ -10,12 +10,10 @@ Certifique-se de ter as seguintes ferramentas instaladas em sua máquina:
 ### 2. Clonar o Repositório
 Abra o seu terminal e execute o comando abaixo para clonar o projeto:
 
-git clone <URL_DO_SEU_REPOSITORIO>
+git clone https://github.com/HeitorAlvesP/faculdadelibano.git
 
 ### 3. Acessar a Pasta do Projeto
-Entre na pasta que acabou de ser criada:
-
-cd nome-da-pasta-do-projeto
+Entre na pasta que acabou de ser criada
 
 ### 4. Instalar as Dependências
 Instale os pacotes necessários do projeto rodando:
@@ -27,4 +25,4 @@ Inicie o servidor local:
 
 npm run dev
 
-Pronto! Agora basta abrir o link exibido no terminal (geralmente http://localhost:3000) no seu navegador para acessar a aplicação.
+Pronto! Agora basta abrir o link exibido no terminal (http://localhost:3000) no seu navegador para acessar o site.
