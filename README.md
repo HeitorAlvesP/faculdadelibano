@@ -1,4 +1,4 @@
-## 🚀 Como Executar o Projeto
+## Como Executar o Projeto
 
 Siga os passos abaixo para clonar e rodar o projeto em outro computador:
 
